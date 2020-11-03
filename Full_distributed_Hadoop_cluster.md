@@ -1,4 +1,4 @@
-Part 1 The architecture of full-distributed Hadoop cluster
+#Part 1 The architecture of full-distributed Hadoop cluster
 
 | Resources     | hadoop100           |       hadoop101                   |      hadoop102                  |
 | ------------- | :--------------:    |  :------------------------------: | :-----------------------------: |
