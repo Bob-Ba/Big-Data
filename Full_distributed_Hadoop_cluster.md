@@ -1,8 +1,9 @@
 Part 1 The architecture of full-distributed Hadoop cluster
 
-                 hadoop100                 hadoop101                          hadoop102
-HDFS             NameNode, DataNode        DataNode                           SecondaryNameNode, DataNode
-YARN             NodeManager               ResourceManager, NodeManager       NodeManager
+| Resources     | hadoop100           |       hadoop101                   |      hadoop102                  |
+| ------------- | :--------------:    |  :------------------------------: | :-----------------------------: |
+|HDFS           |  NameNode, DataNode |        DataNode                   |    SecondaryNameNode, DataNode  |
+|YARN           |  NodeManager        |      ResourceManager, NodeManager |      NodeManager                |
 
 Note: use 3 servers to simulate the real cluster, all designs to the nodes are related to the consumption of resources, it is not fixed.
 
