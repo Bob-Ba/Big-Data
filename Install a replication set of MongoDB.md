@@ -1,8 +1,12 @@
-1. Prepare three servers
+# 1. Prepare three servers
+    ```
     hadoop100 (10.0.2.100), hadoop101 (10.0.2.101), hadoop102 (10.0.2.102)
+    ```
 
-2. Prepare three mongo.conf files for every server
-    hadoop100:
+# 2. Prepare three mongo.conf files for every server
+
+    **hadoop100:**
+```
      ------------------------------------------------------------------------------------------------
 systemLog:
     #The path of the log to which mongod or mongos should send all diagnostic logging information
@@ -35,7 +39,7 @@ replication:
     replSetName: replTPP0
 
     ------------------------------------------------------------------------------------------------
-    
+```    
     hadoop101:
     ------------------------------------------------------------------------------------------------
 systemLog:
