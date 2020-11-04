@@ -24,29 +24,30 @@ Memory: 1-2G (can be modified any time on VirtualBox panel), Disk: 8-10G
 
 ### a. 
 ```
-Make sure the virtual machine own an Adapter that can only be used to visit the internet by NAT mode.
-NAT mode only allows all virtual machines to use one IP that is the same at the master to visit net. 
-Namely, all other visitors outside can not visit any virtual machines by IP because they do not have one, they share only one IP from master.
+- Make sure the virtual machine own an Adapter that can only be used to visit the internet by NAT mode.
+- NAT mode only allows all virtual machines to use one IP that is the same at the master to visit net. 
+- Namely, all other visitors outside can not visit any virtual machines by IP because they do not have one, they share only one IP from master.
 
 You can see the adapter name, default IP, Gateway and DNS information from the initial panel below, but now you only can
 visit the internet while the master can not ping the virtual machine successfully because they are not in the same slash.
-```    	 
-
+```
 
 ### b. 
-Create another adapter for the communication that the master wants to ping the virtual machine successfully (do this on VirtualBox-->Network)
- 	 This adapter allows the master to connect to the virtual machine, such as using ping and ssh to visit and control.
-  	Host-only Adapter is established by the VirtualBox through 'Network' in Tools Menu, which will produce a new IP slash that
-        will bind the master with the virtual machine together in the same slash. 
-         There will be a new adapter shown in master: (the vboxnet0 is the new one)
-        terminal panel when using command 'ifconfig', e.g., :
+```
+- Create another adapter for the communication that the master wants to ping the virtual machine successfully (do this on VirtualBox-->Network)
+- This adapter allows the master to connect to the virtual machine, such as using ping and ssh to visit and control.
+- Host-only Adapter is established by the VirtualBox through 'Network' in Tools Menu, which will produce a new IP slash that
+  will bind the master with the virtual machine together in the same slash. 
+         
+- There will be a new adapter shown in master: (the vboxnet0 is the new one) terminal panel when using command 'ifconfig', e.g., :
         
         """        
          vboxnet0: flags=8943<UP,BROADCAST,RUNNING,PROMISC,SIMPLEX,MULTICAST> mtu 1500
          ether 0a:00:27:00:00:00 
          inet 192.168.56.1 netmask 0xffffff00 broadcast 192.168.56.255
         """
-   
+```
+
 Meanwhile, we can see a new adapter named 'enp0s8' with the new IP such as '192.168.56.1', giving it a static IP
        '192.168.56.100', so you can ping 192.168.56.100 from master, because that is the another IP for the virtual machine to
 communicate with master, which is different from the other one called 'enp0s3' that is the IP used to visit the internet.
