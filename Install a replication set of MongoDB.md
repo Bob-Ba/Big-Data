@@ -6,7 +6,7 @@
 
 # 2. Prepare three mongo.conf files for every server
 
-**hadoop100:**
+## hadoop100:
     
 ```
 systemLog:
@@ -41,7 +41,7 @@ replication:
  
 ```    
     
-**hadoop101:
+## hadoop101:
     
 systemLog:
     #The path of the log to which mongod or mongos should send all diagnostic logging information
@@ -75,7 +75,7 @@ replication:
 
     
 
-    hadoop102:
+## hadoop102:
     
 systemLog:
     #The path of the log to which mongod or mongos should send all diagnostic logging information
@@ -109,24 +109,25 @@ replication:
 
     
 
-3. The architecture of replication set
+# 3. The architecture of replication set
 Abstract: The architecture is similar to MySQL cluster, including read and write.
 
-a. One Primary with two Secondary nodes
+## a. One Primary with two Secondary nodes
 
 
-a 1.1 How to elect Primary node when the original Primary node goes down.
+### a 1.1 How to elect Primary node when the original Primary node goes down.
 
 
-b. One Primary, one Secondary and one 
+## b. One Primary, one Secondary and one 
 Abstract: Arbiter node does not store data generally, which is only responsible for election.
 
 
-b 1.1 Election with Arbiter
+### b 1.1 Election with Arbiter
 
 
-4. The settings of replication set
-4.1 Check the connection between all members in repica set
+# 4. The settings of replication set
+## 4.1 Check the connection between all members in repica set
+```
 Test the connection from hadoop100 to ohter hosts with the following operation set.
 ./mongo --host hadoop101 --port 27017
 ./mongo --host hadoop102 --port 27017
@@ -143,28 +144,37 @@ rs.initiate( {
    ]
 })
 
+```
 
-
-4.2 Show the configuration of the default replication after initiation
+## 4.2 Show the configuration of the default replication after initiation
+```
 rs.conf()
+```
 
-
-4.3 Adding members in this replication set (The important step)
+## 4.3 Adding members in this replication set (The important step)
+```
 rs.add("hadoop101:27017")  #(Secondary node)
 
 rs.addArb("hadoop102:27017")  #(Arbiter node)
+```
 
-4.4 Use Secondary node 
+## 4.4 Use Secondary node 
+```
 #If you wanna use the node, you have to acknowledge the role first with the operation set below:
 rs.secondaryOk()
+```
 
-5. Test the replica set 
+# 5. Test the replica set 
+```
 use TPP (use database TPP or the server will create a database named TPP)
 db (check the current database)
 show dbs (show all databases, if you just create a database, you can see the database name in the result list after you insert one data at least)
+```
 
-5.1 Insert data in collection
+## 5.1 Insert data in collection
+```
 db.products.insert( { _id: 1, item: "bag", qty: 20 } )
 db.products.find()
+```
 
-All Shell methods: https://docs.mongodb.com/v4.2/reference/method/
+**Note:** All Shell methods: https://docs.mongodb.com/v4.2/reference/method/
