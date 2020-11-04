@@ -1,15 +1,18 @@
-1. Preparation
+# 1. Preparation
+```
     VirtualBox 6.1  The official website
     CentOS 8-stream Download (CentOS-Stream-8-x86_64-20200827-dvd1.iso)
+```
 
-2. Installation
+# 2. Installation
+```
     2.1. Install an empty virtual machine first without any systems, which resembles a new laptop without OS.
     2.2. And then, run the virtual machine, choose the iso mirror file, e.g., CentOS-Stream-8-x86_64-20200827-dvd1.iso
     2.3. Memory: 1-2G (can be modified any time on VirtualBox panel), Disk: 8-10G
-    2.4.Open the network
+    2.4. Open the network
          a. Make sure the virtual machine own an Adapter that can only be used to visit the internet by NAT mode
-        NAT mode only allows all virtual machines to use one IP that is the same at the master to visit net. Namely, all other visitors
-        outside can not visit any virtual machines by IP because they do not have one, they share only one IP from master.
+         NAT mode only allows all virtual machines to use one IP that is the same at the master to visit net. Namely, all other visitors
+         outside can not visit any virtual machines by IP because they do not have one, they share only one IP from master.
  
         You can see the adapter name, default IP, Gateway and DNS information from the initial panel below, but now you only can
          visit the internet while the master can not ping the virtual machine successfully because they are not in the same slash.
@@ -56,6 +59,7 @@ b. The adapter for communication with master
         NETMASK=255.255.255.0
         DNS1=192.168.56.1
         HWADDR=08:00:27:B1:21:BD
+```
 
 2.5. Change hostname
 First, vim /etc/sysconfig/network
