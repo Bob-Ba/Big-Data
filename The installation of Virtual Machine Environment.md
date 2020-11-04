@@ -46,13 +46,14 @@ visit the internet while the master can not ping the virtual machine successfull
          ether 0a:00:27:00:00:00 
          inet 192.168.56.1 netmask 0xffffff00 broadcast 192.168.56.255
         """
-```
+
 
 Meanwhile, we can see a new adapter named 'enp0s8' with the new IP such as '192.168.56.1', giving it a static IP
-       '192.168.56.100', so you can ping 192.168.56.100 from master, because that is the another IP for the virtual machine to
+'192.168.56.100', so you can ping 192.168.56.100 from master, because that is the another IP for the virtual machine to
 communicate with master, which is different from the other one called 'enp0s3' that is the IP used to visit the internet.
 
-Note of the Network: The virtual machine will have two adapters, one is used to visit the internet, another one is used to communicated with master.
+```
+**Note of the Network:** The virtual machine will have two adapters, one is used to visit the internet, another one is used to communicated with master.
 
 Examples of the Network configuraton: 
 It is better to use static IPs which are created by the VirtualBox at beginning.
