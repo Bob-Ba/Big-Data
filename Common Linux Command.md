@@ -1,5 +1,5 @@
 ```
-Start commands:
+**Start commands:**
 sbin/start-dfs.sh
 sbin/start-yarn.sh
 mapred --daemon start historyserver
