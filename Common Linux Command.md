@@ -1,3 +1,4 @@
+```
 Start commands:
 sbin/start-dfs.sh
 sbin/start-yarn.sh
@@ -27,3 +28,4 @@ scp -r Bob@hadoop100:/opt/module root@hadoop102:/opt/module
 Copy environment varables:
 scp /etc/profile root@hadoop101:/etc/profile
 source /etc/profile
+```
