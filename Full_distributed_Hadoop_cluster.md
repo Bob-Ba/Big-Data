@@ -1,14 +1,14 @@
-# **Part 1 The architecture of full-distributed Hadoop cluster**
+# Part 1 The architecture of full-distributed Hadoop cluster
 
 | Resources     | hadoop100           |       hadoop101                   |      hadoop102                  |
 | ------------- | :--------------:    |  :------------------------------: | :-----------------------------: |
 |HDFS           |  NameNode, DataNode |        DataNode                   |    SecondaryNameNode, DataNode  |
 |YARN           |  NodeManager        |      ResourceManager, NodeManager |      NodeManager                |
 
-Note: use 3 servers to simulate the real cluster, all designs to the nodes are related to the consumption of resources, it is not fixed.
+**Note:** use 3 servers to simulate the real cluster, all designs to the nodes are related to the consumption of resources, it is not fixed.
 
-Part 2 Settings
-1. core-site.xml
+# Part 2 Settings
+## 1. core-site.xml
 <!-- Put site-specific property overrides in this file. -->
 <configuration>
     <!-- Set NameNode in HDFS -->
@@ -24,10 +24,10 @@ Part 2 Settings
     </property>
 </configuration>
 
-2. hadoop-env.sh
+## 2. hadoop-env.sh
 export JAVA_HOME=/opt/module/jdk1.8.0_261
 
-3. hdfs-site.xml
+## 3. hdfs-site.xml
 <!-- Put site-specific property overrides in this file. -->
 
 <configuration>
@@ -44,10 +44,10 @@ export JAVA_HOME=/opt/module/jdk1.8.0_261
     </property>
 </configuration>
 
-4. yarn-env.sh
+## 4. yarn-env.sh
 export JAVA_HOME=/opt/module/jdk1.8.0_261
 
-5. yarn-site.xml
+## 5. yarn-site.xml
 <configuration>
 
 <!-- Site specific YARN configuration properties -->
@@ -80,10 +80,10 @@ export JAVA_HOME=/opt/module/jdk1.8.0_261
     </property>
 </configuration>
 
-6. mapred-env.sh
+## 6. mapred-env.sh
 export JAVA_HOME=/opt/module/jdk1.8.0_261
 
-7. mapred-site.xml
+## 7. mapred-site.xml
 <!-- Put site-specific property overrides in this file. -->
 <configuration>
     <!-- MR run on Yarn -->
@@ -110,34 +110,34 @@ export JAVA_HOME=/opt/module/jdk1.8.0_261
 </configuration>
 
 
-Part 3 Start Service
-1. Must delete $HADOOP_HOME/data/ and $HADOOP_HOME/logs/ 
+# Part 3 Start Service
+## 1. Must delete $HADOOP_HOME/data/ and $HADOOP_HOME/logs/ 
 rm -rf $HADOOP_HOME/data/  $HADOOP_HOME/logs/  (execute it on all servers)
 
-2. Edit 'workers' file (related to Datanode, its name is 'slaves' in old version)
+## 2. Edit 'workers' file (related to Datanode, its name is 'slaves' in old version)
 Write all Datanode servers' host in it, namely, just write the host how many you have for datanode, no any spaces and return.
 /opt/module/hadoop-3.2.1/etc/hadoop/slaves (if there is no slaves file, just create it by yourself): 
 hadoop100
 hadoop101
 hadoop102
 
-3. Format namenode
+## 3. Format namenode
 bin/hdfs namenode -format
 
-4. Start cluster
-a. Go to the Namenode server, and execute the start command below:
+## 4. Start cluster
+### a. Go to the Namenode server, and execute the start command below:
 sbin/start-dfs.sh       <--->  (sbin/stop-dfs.sh)
 
 see the logs like:
 
 
-b. Go to the Resourcemanager server node, start yarn
+### b. Go to the Resourcemanager server node, start yarn
 sbin/start-yarn.sh       <--->  (sbin/stop-yarn.sh)
 
 logs:
 
 
-5. Stop cluster
+## 5. Stop cluster
 sbin/stop-yarn.sh (first)
 sbin/stop-dfs.sh   (second)
 
