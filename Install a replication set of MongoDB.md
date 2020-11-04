@@ -1,13 +1,14 @@
 # 1. Prepare three servers
+    
     ```
     hadoop100 (10.0.2.100), hadoop101 (10.0.2.101), hadoop102 (10.0.2.102)
     ```
 
 # 2. Prepare three mongo.conf files for every server
 
-    **hadoop100:**
+    hadoop100:
+    
 ```
-     ------------------------------------------------------------------------------------------------
 systemLog:
     #The path of the log to which mongod or mongos should send all diagnostic logging information
     #
@@ -37,11 +38,10 @@ net:
 replication:
     #The name of the replication set
     replSetName: replTPP0
-
-    ------------------------------------------------------------------------------------------------
+ 
 ```    
     hadoop101:
-    ------------------------------------------------------------------------------------------------
+    
 systemLog:
     #The path of the log to which mongod or mongos should send all diagnostic logging information
     #
@@ -72,10 +72,10 @@ replication:
     #The name of the replication set
     replSetName: replTPP0
 
-    ------------------------------------------------------------------------------------------------
+    
 
     hadoop102:
-    ------------------------------------------------------------------------------------------------
+    
 systemLog:
     #The path of the log to which mongod or mongos should send all diagnostic logging information
     #
@@ -106,7 +106,7 @@ replication:
     #The name of the replication set
     replSetName: replTPP0
 
-    ------------------------------------------------------------------------------------------------
+    
 
 3. The architecture of replication set
 Abstract: The architecture is similar to MySQL cluster, including read and write.
