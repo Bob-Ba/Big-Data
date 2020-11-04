@@ -110,7 +110,9 @@ replication:
     
 
 # 3. The architecture of replication set
+```
 Abstract: The architecture is similar to MySQL cluster, including read and write.
+```
 
 ## a. One Primary with two Secondary nodes
 
@@ -119,8 +121,9 @@ Abstract: The architecture is similar to MySQL cluster, including read and write
 
 
 ## b. One Primary, one Secondary and one 
+```
 Abstract: Arbiter node does not store data generally, which is only responsible for election.
-
+```
 
 ### b 1.1 Election with Arbiter
 
@@ -132,8 +135,10 @@ Test the connection from hadoop100 to ohter hosts with the following operation s
 ./mongo --host hadoop101 --port 27017
 ./mongo --host hadoop102 --port 27017
 Note: Test the connection from other different members, ensure all members can connect to others.
+```
 
-4.2 Connect to the Primary server and start the settings (Please use hostname to replace IP)
+## 4.2 Connect to the Primary server and start the settings (Please use hostname to replace IP)
+```
 ./mongo --host hadoop100 --port 27017  
 
 #You have initiate the server first or you can not use any commands and got an exception: NotMasterNoSlaveOk.
@@ -146,19 +151,19 @@ rs.initiate( {
 
 ```
 
-## 4.2 Show the configuration of the default replication after initiation
+## 4.3 Show the configuration of the default replication after initiation
 ```
 rs.conf()
 ```
 
-## 4.3 Adding members in this replication set (The important step)
+## 4.4 Adding members in this replication set (The important step)
 ```
 rs.add("hadoop101:27017")  #(Secondary node)
 
 rs.addArb("hadoop102:27017")  #(Arbiter node)
 ```
 
-## 4.4 Use Secondary node 
+## 4.5 Use Secondary node 
 ```
 #If you wanna use the node, you have to acknowledge the role first with the operation set below:
 rs.secondaryOk()
