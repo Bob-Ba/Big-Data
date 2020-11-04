@@ -1,4 +1,4 @@
-# 1. Prepare three servers
+# 1. Preparation
     
 ```
     mongodb-linux-x86_64-rhel80-4.2.10.tgz
