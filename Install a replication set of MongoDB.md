@@ -6,7 +6,7 @@
 
 # 2. Prepare three mongo.conf files for every server
 
-    hadoop100:
+**hadoop100:**
     
 ```
 systemLog:
@@ -40,7 +40,8 @@ replication:
     replSetName: replTPP0
  
 ```    
-    hadoop101:
+    
+**hadoop101:
     
 systemLog:
     #The path of the log to which mongod or mongos should send all diagnostic logging information
