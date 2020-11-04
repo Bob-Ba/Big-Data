@@ -1,7 +1,7 @@
 # 1. Preparation
 ```
-    VirtualBox 6.1  The official website
-    CentOS 8-stream Download (CentOS-Stream-8-x86_64-20200827-dvd1.iso)
+    VirtualBox 6.1  
+    CentOS 8-stream  (CentOS-Stream-8-x86_64-20200827-dvd1.iso)
 ```
 
 # 2. Installation
