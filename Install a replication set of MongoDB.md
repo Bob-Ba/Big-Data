@@ -1,6 +1,8 @@
 # 1. Prepare three servers
     
 ```
+    mongodb-linux-x86_64-rhel80-4.2.10.tgz
+    
     hadoop100 (10.0.2.100), hadoop101 (10.0.2.101), hadoop102 (10.0.2.102)
 ```
 
