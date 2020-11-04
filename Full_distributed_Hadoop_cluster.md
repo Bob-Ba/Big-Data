@@ -9,6 +9,7 @@
 
 # Part 2 Settings
 ## 1. core-site.xml
+```xml
 <!-- Put site-specific property overrides in this file. -->
 <configuration>
     <!-- Set NameNode in HDFS -->
@@ -23,6 +24,7 @@
         <value>/opt/module/hadoop-3.2.1/data/tmp</value>
     </property>
 </configuration>
+```
 
 ## 2. hadoop-env.sh
 export JAVA_HOME=/opt/module/jdk1.8.0_261
