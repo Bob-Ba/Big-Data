@@ -79,15 +79,18 @@ b. The adapter for communication with master
         HWADDR=08:00:27:B1:21:BD
 ```
 
-2.5. Change hostname
-First, vim /etc/sysconfig/network
-Second, update and save with: HOSTNAME=hadoop100
-Last, hostnamectl set-hostname hadoop100 (work immediately)
+## 2.5. Change hostname
+```
+- vim /etc/sysconfig/network
+- update and save with: HOSTNAME=hadoop100
+- hostnamectl set-hostname hadoop100 (work immediately)
+```
 
-2.6. Configure hosts
-First, vim /etc/hosts
-Second, update it and save it
-Third, source /etc/hosts (make it available)
+## 2.6. Configure hosts
+```
+- vim /etc/hosts
+- update it and save it
+- source /etc/hosts (make it available)
 
 Part1, Virtual Machine
 if there are 3 in the cluster:
@@ -100,5 +103,6 @@ Part2, Master
 192.168.56.101 hadoop101
 192.168.56.102 hadoop102
 
+```
 
-Now, if you can ping every one in the environment, the cluster is built successfully.
+**Now, if you can ping every one in the environment, the cluster is built successfully.**
