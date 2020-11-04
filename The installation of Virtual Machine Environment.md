@@ -55,7 +55,8 @@ communicate with master, which is different from the other one called 'enp0s3' t
 ```
 **Note of the Network:** The virtual machine will have two adapters, one is used to visit the internet, another one is used to communicated with master.
 
-Examples of the Network configuraton: 
+### Examples of the Network configuraton: 
+```
 It is better to use static IPs which are created by the VirtualBox at beginning.
 
 ls -l /etc/sysconfig/network-scripts/ifcfg-enp0s3
@@ -76,6 +77,7 @@ b. The adapter for communication with master
         NETMASK=255.255.255.0
         DNS1=192.168.56.1
         HWADDR=08:00:27:B1:21:BD
+```
 
 2.5. Change hostname
 First, vim /etc/sysconfig/network
