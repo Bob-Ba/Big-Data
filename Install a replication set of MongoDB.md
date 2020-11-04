@@ -1,8 +1,8 @@
 # 1. Prepare three servers
     
-    ```
+```
     hadoop100 (10.0.2.100), hadoop101 (10.0.2.101), hadoop102 (10.0.2.102)
-    ```
+```
 
 # 2. Prepare three mongo.conf files for every server
 
