@@ -1,3 +1,10 @@
+# Preparation
+```
+jdk-8u261-linux-x64.tar.gz 
+hadoop-3.2.1.tar.gz 
+CentOS 8-stream Download (CentOS-Stream-8-x86_64-20200827-dvd1.iso)
+```
+
 # Part 1 The architecture of full-distributed Hadoop cluster
 
 | Resources     | hadoop100           |       hadoop101                   |      hadoop102                  |
