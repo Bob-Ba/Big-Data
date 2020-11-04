@@ -27,9 +27,12 @@
 ```
 
 ## 2. hadoop-env.sh
+```
 export JAVA_HOME=/opt/module/jdk1.8.0_261
+```
 
 ## 3. hdfs-site.xml
+```xml
 <!-- Put site-specific property overrides in this file. -->
 
 <configuration>
@@ -45,6 +48,7 @@ export JAVA_HOME=/opt/module/jdk1.8.0_261
         <value>hadoop102:50090</value>
     </property>
 </configuration>
+```
 
 ## 4. yarn-env.sh
 ```
