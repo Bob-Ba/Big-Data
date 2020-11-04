@@ -42,7 +42,7 @@ replication:
 ```    
     
 ## hadoop101:
-    
+```    
 systemLog:
     #The path of the log to which mongod or mongos should send all diagnostic logging information
     #
@@ -73,10 +73,10 @@ replication:
     #The name of the replication set
     replSetName: replTPP0
 
-    
+```    
 
 ## hadoop102:
-    
+```    
 systemLog:
     #The path of the log to which mongod or mongos should send all diagnostic logging information
     #
@@ -106,7 +106,7 @@ net:
 replication:
     #The name of the replication set
     replSetName: replTPP0
-
+```
     
 
 # 3. The architecture of replication set
